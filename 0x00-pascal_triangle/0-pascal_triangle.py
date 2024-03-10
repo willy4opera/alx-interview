@@ -16,7 +16,6 @@ def pascal_triangle(n):
             if y == 0 or y == x:
                 ln_lst.append(1)
             elif x > 0 and y > 0:
-                ln_lst.append(p_triangle[x - 1][y - 1]
-                              + p_triangle[x - 1][y])
+                ln_lst.append(p_triangle[x - 1][y - 1] + p_triangle[x - 1][y])
         p_triangle.append(ln_lst)
     return p_triangle
