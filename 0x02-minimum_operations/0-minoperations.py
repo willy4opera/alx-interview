@@ -17,13 +17,13 @@ def minOperations(n):
     while completed < n:
         if clpbd == 0:
             # init (the first copy all and paste)
-            clpbd = completed 
+            clpbd = completed
             completed += clpbd
             option_c += 2
             # print('-(11)->{}'.format('H' * completed ), end='')
-        elif n - completed > 0 and (n - completed ) % completed == 0:
+        elif n - completed > 0 and (n - completed) % completed == 0:
             # copy all and paste
-            clpbd = completed 
+            clpbd = completed
             completed += clpbd
             option_c += 2
             # print('-(11)->{}'.format('H' * completed ), end='')
