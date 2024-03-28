@@ -19,7 +19,8 @@ def input_extractor(input_line):
         'status_code': 0,
         'file_size': 0,
     }
-    log_pattern = '{}\\-{}{}{}{}\\s*'.format(expt[0], expt[1], expt[2], expt[3], expt[4])
+    log_pattern = '{}\\-{}{}{}{}\\s*'.format(
+        expt[0], expt[1], expt[2], expt[3], expt[4])
     exp_match = re.fullmatch(log_pattern, input_line)
     if exp_match is not None:
         status_code = exp_match.group('status_code')
