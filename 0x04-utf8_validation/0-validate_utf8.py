@@ -14,7 +14,7 @@ def validUTF8(data):
         if ignore > 0:
             ignore -= 1
             continue
-        if type(data[x]) != int or data[x] < 0 or data[x] > 0x10ffff:
+        if not isinstance(data[x], int) or data[x] < 0 or data[x] > 0x10ffff:
             return False
         elif data[x] <= 0x7f:
             ignore = 0
@@ -50,7 +50,7 @@ def validUTF8(data):
             if num - x >= span_val:
                 nxt_body = list(map(
                     lambda xx: xx & 0b11000000 == 0b10000000,
-                    data[x + 1:  + span_val],
+                    data[x + 1: + span_val],
                 ))
                 if not all(nxt_body):
                     return False
