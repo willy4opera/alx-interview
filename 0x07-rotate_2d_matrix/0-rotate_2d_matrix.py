@@ -4,17 +4,16 @@
 '''
 
 
-
 def rotate_2d_matrix(matrix):
     '''Rotates an m by n 2D matrix by moving th first
     column element to the first row, second to the second
     row....
     '''
-    if type(matrix) != list:
+    if not isinstance(matrix, list):
         return
     if len(matrix) <= 0:
         return
-    if not all(map(lambda x: type(x) == list, matrix)):
+    if not all(map(lambda x: isinstance(x, list), matrix)):
         return
     m_rows = len(matrix)
     m_cols = len(matrix[0])
